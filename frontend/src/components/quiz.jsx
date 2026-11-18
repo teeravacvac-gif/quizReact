@@ -70,12 +70,15 @@ function Quiz() {
   return (
     <div>
       <h2>Question {currentQuestion+1}/{questionBank.length}</h2>
-      <p >{questionBank[currentQuestion].question}</p>
+      <p className="question">{questionBank[currentQuestion].question}</p>
         {questionBank[currentQuestion].options.map((option)=>(
-            <button onClick={()=>handleSelect(option)}>{option}</button>
+            <button 
+            onClick={()=>handleSelect(option)}
+            className="option"
+            >{option}</button>
         ))}
         
-        <div>
+        <div className="nav-buttons">
             <button onClick={goToPrev}>Prev</button>
             <button onClick={goToNext}>Next</button>
         </div>
